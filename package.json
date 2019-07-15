@@ -1,6 +1,11 @@
 {
   "name": "svelte-youtube-downloader",
   "version": "1.0.0",
+  "description": "A simple youtube video downloader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prokawsar/youtube-video-downloader"
+  },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
     "rollup": "^1.10.1",
@@ -18,5 +23,6 @@
     "dev": "run-p start:dev autobuild",
     "start": "sirv public",
     "start:dev": "sirv public --dev"
-  }
+  },
+  "license": ""
 }
