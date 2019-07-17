@@ -24,5 +24,8 @@
     "start": "sirv public",
     "start:dev": "sirv public --dev"
   },
-  "license": ""
+  "license": "",
+  "dependencies": {
+    "bulma": "^0.7.5"
+  }
 }
