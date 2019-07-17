@@ -1,12 +1,8 @@
 <script>
-	let name = 'User';
+	import SearchBar from './views/SearchBar.svelte'
+	import ResultPanel from './views/ResultPanel.svelte'
 
 </script>
 
-<style>
-	h1 {
-		color: purple;
-	}
-</style>
-
-<h1>Hello {name}!</h1>
+<SearchBar />
+<ResultPanel />
