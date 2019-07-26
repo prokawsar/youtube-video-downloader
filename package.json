@@ -26,6 +26,7 @@
   },
   "license": "",
   "dependencies": {
-    "bulma": "^0.7.5"
+    "bulma": "^0.7.5",
+    "rollup-plugin-scss": "^1.0.1"
   }
 }

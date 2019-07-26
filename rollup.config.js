@@ -3,6 +3,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import scss from 'rollup-plugin-scss'
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -24,7 +25,6 @@ export default {
 				css.write('public/bundle.css');
 			}
 		}),
-
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
 		// some cases you'll need additional configuration —
@@ -32,7 +32,27 @@ export default {
 		// https://github.com/rollup/rollup-plugin-commonjs
 		resolve(),
 		commonjs(),
+		scss({
+			//Choose *one* of these possible "output:..." options
+			// Default behaviour is to write all styles to the bundle destination where .js is replaced by .css
+			output: true,
 
+			// Filename to write all styles to
+			output: 'public/bundle.css',
+
+			// Callback that will be called ongenerate with two arguments:
+			// - styles: the contents of all style tags combined: 'body { color: green }'
+			// - styleNodes: an array of style objects: { filename: 'body { ... }' }
+			output: function (styles, styleNodes) {
+				writeFileSync('public/bundle.css', styles)
+			},
+
+			// Disable any style output or callbacks, import as string
+			output: false,
+
+			// Determine if node process should be terminated on error (default: false)
+			failOnError: true,
+		}),
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
 		!production && livereload('public'),
