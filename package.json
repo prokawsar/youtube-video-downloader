@@ -15,7 +15,6 @@
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-sass": "^1.2.2",
-    "rollup-plugin-scss": "^1.0.1",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
     "sirv-cli": "^0.4.0",
@@ -25,10 +24,9 @@
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
-    "css-build": "node-sass --omit-source-map-url src/sass/app.scss public/css/bundle.css",
-    "css-watch": "npm run css-build -- --watch",
     "start": "sirv public",
     "start:dev": "sirv public --dev"
   },
-  "license": ""
+  "license": "",
+  "dependencies": {}
 }
