@@ -24,7 +24,7 @@
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
-    "css-build": "node-sass --omit-source-map-url sass/app.scss public/css/bundle.css",
+    "css-build": "node-sass --omit-source-map-url src/sass/app.scss public/css/bundle.css",
     "css-watch": "npm run css-build -- --watch",
     "start": "sirv public",
     "start:dev": "sirv public --dev"
