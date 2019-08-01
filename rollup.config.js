@@ -13,7 +13,7 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/bundle.js'
+		file: 'public/js/bundle.js'
 	},
 	plugins: [
 		svelte({
@@ -22,7 +22,7 @@ export default {
 			// we'll extract any component CSS out into
 			// a separate file — better for performance
 			css: css => {
-				css.write('public/bundle.css');
+				css.write('public/css/bundle.css');
 			}
 		}),
 		// If you have external dependencies installed from
@@ -38,13 +38,13 @@ export default {
 			output: true,
 
 			// Filename to write all styles to
-			output: 'public/bundle.css',
+			output: 'public/css/bundle.css',
 
 			// Callback that will be called ongenerate with two arguments:
 			// - styles: the contents of all style tags combined: 'body { color: green }'
 			// - styleNodes: an array of style objects: { filename: 'body { ... }' }
 			output: function (styles, styleNodes) {
-				writeFileSync('public/bundle.css', styles)
+				writeFileSync('public/css/bundle.css', styles)
 			},
 
 			// Disable any style output or callbacks, import as string

@@ -1,5 +1,5 @@
 {
-  "name": "svelte-youtube-downloader",
+  "name": "youtube-downloader",
   "version": "1.0.0",
   "description": "A simple youtube video downloader",
   "repository": {
@@ -7,11 +7,14 @@
     "url": "https://github.com/prokawsar/youtube-video-downloader"
   },
   "devDependencies": {
+    "bulma": "^0.7.5",
+    "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
     "rollup": "^1.10.1",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-scss": "^1.0.1",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
     "sirv-cli": "^0.4.0",
@@ -21,12 +24,10 @@
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
+    "css-build": "node-sass --omit-source-map-url sass/app.scss public/css/bundle.css",
+    "css-watch": "npm run css-build -- --watch",
     "start": "sirv public",
     "start:dev": "sirv public --dev"
   },
-  "license": "",
-  "dependencies": {
-    "bulma": "^0.7.5",
-    "rollup-plugin-scss": "^1.0.1"
-  }
+  "license": ""
 }
