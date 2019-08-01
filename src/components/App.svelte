@@ -4,5 +4,9 @@
 
 </script>
 
-<SearchBar />
-<ResultPanel />
+<div class="container is-fluid">
+  <div class="notification">
+		<SearchBar />
+		<ResultPanel />
+  </div>
+</div>
