@@ -6,6 +6,17 @@ import { terser } from 'rollup-plugin-terser';
 import sass from 'rollup-plugin-sass';
 
 const production = !process.env.ROLLUP_WATCH;
+const K_ENV 		 = production ? 'prod' : 'dev';
+const outputMap  = {
+  'prod': {
+    'js': 'build/js/bundle.js',
+    'css': 'build/css/bundle.css'
+  },
+  'dev': {
+    'js': 'public/js/bundle.js',
+    'css': 'public/css/bundle.css'
+  },
+}
 
 export default {
 	input: 'src/main.js',
@@ -13,7 +24,7 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/js/bundle.js'
+		file: outputMap[K_ENV].js
 	},
 	plugins: [
 		svelte({
@@ -22,7 +33,7 @@ export default {
 			// we'll extract any component CSS out into
 			// a separate file — better for performance
 			css: css => {
-				css.write('public/css/bundle.css');
+				css.write(outputMap[K_ENV].css);
 			}
 		}),
 		// If you have external dependencies installed from
@@ -36,7 +47,7 @@ export default {
 			output: true,
 
 			// Filename to write all styles to
-			output: 'public/css/bundle.css',
+			output: outputMap[K_ENV].css,
 
 			// Callback that will be called ongenerate with two arguments:
 			// - styles: the contents of all style tags combined: 'body { color: green }'

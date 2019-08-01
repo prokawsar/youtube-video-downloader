@@ -2,3 +2,4 @@
 node_modules
 public/css/bundle.*
 public/js/bundle.*
+build
