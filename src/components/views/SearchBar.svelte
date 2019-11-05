@@ -9,6 +9,7 @@ let getLink = (event) => {
 	result_state = true
 }
 </script>
+
 <div>
 	<h1 class="title has-text-centered">YouTube video downloader</h1>
 
