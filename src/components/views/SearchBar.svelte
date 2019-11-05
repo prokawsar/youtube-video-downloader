@@ -28,7 +28,7 @@ let onGetLink = () => {
 		<div class="control has-icons-right">
 			<input class="input is-info" type="text" bind:value={youtube_link} placeholder="YouTube link">
 			{#if youtube_link != ''}
-				<span class="icon is-small is-right" on:click={clear}>
+				<span class="icon is-small is-right has-text-danger" on:click={clear}>
 					<i class="fas fa-times-circle" style="cursor: pointer;"></i>
 				</span>
 			{/if}
