@@ -7,6 +7,7 @@
 		let {youtube_link} = event.detail
 		console.log(youtube_link)
 		//process link here
+		result_state = true
 	}
 
 </script>
