@@ -2,7 +2,7 @@
 
 import LinkViewer from './ResultPanel.svelte';
 
-let result_state = false
+export let result_state = false
 
 let getLink = (event) => {
   event.stopPropagation()
@@ -16,11 +16,15 @@ let getLink = (event) => {
 	<div class="field">
 		<div class="control has-text-centered">
 			<input class="input is-info" type="text" placeholder="YouTube link">
+			<span class="icon is-small is-right">
+				<i class="fa fa-check"></i>
+			</span>
+		</div>
+	</div>
+	<div class="field">
+		<div class="control has-text-centered">
 			<button class="button is-link" on:click={getLink}>Get Link</button>
 		</div>
 	</div>
 
-	{#if result_state}
-		<LinkViewer />
-	{/if}
 </div>
