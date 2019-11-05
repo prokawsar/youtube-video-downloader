@@ -1,6 +1,8 @@
 <script>
 
-import LinkViewer from './ResultPanel.svelte';
+import { createEventDispatcher } from 'svelte';
+
+const dispatch = createEventDispatcher();
 
 export let result_state = false
 
@@ -12,8 +14,16 @@ let getLink = (event) => {
 }
 
 let clear = (event) => {
+	event.stopPropagation()
 	youtube_link = ''
 }
+
+let onGetLink = () => {
+	dispatch('getLink', {
+		youtube_link
+	});
+}
+
 </script>
 
 <div>
@@ -31,7 +41,7 @@ let clear = (event) => {
 	</div>
 	<div class="field">
 		<div class="control has-text-centered">
-			<button class="button is-link" on:click={getLink}>Get Link</button>
+			<button class="button is-link" on:click={onGetLink}>Get Link</button>
 		</div>
 	</div>
 
