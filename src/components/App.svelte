@@ -2,11 +2,13 @@
 	import SearchBar from './views/SearchBar.svelte'
 	import ResultPanel from './views/ResultPanel.svelte'
 
+	let video_id = ''
 	let result_state = false
+
 	let gotLink = (event) => {
 		let {youtube_link} = event.detail
-		console.log(youtube_link)
 		//process link here
+		video_id = youtube_link.split('=').pop()
 		result_state = true
 	}
 
@@ -18,7 +20,7 @@
   </div>
 	<div>
 		{#if result_state}
-			<ResultPanel />
+			<ResultPanel bind:video_id />
 		{/if}
 	</div>
 </div>
