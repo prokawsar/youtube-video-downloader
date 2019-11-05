@@ -8,11 +8,6 @@ export let result_state = false
 
 let youtube_link = ''
 
-let getLink = (event) => {
-  event.stopPropagation()
-	result_state = true
-}
-
 let clear = (event) => {
 	event.stopPropagation()
 	youtube_link = ''
@@ -41,7 +36,7 @@ let onGetLink = () => {
 	</div>
 	<div class="field">
 		<div class="control has-text-centered">
-			<button class="button is-link" on:click={onGetLink}>Get Link</button>
+			<button class="button is-link" on:click={onGetLink} disabled={!youtube_link}>Get Link</button>
 		</div>
 	</div>
 
