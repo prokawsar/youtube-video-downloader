@@ -22,14 +22,12 @@ let onGetLink = () => {
 </script>
 
 <div>
-	<h1 class="title has-text-centered">YouTube video downloader</h1>
-
 	<div class="field">
 		<div class="control has-icons-right">
 			<input class="input is-info" type="text" bind:value={youtube_link} placeholder="YouTube link">
 			{#if youtube_link != ''}
 				<span class="icon is-small is-right has-text-danger" on:click={clear}>
-					<i class="fas fa-times-circle" style="cursor: pointer;"></i>
+					<i class="fas fa-times-circle" style="cursor: pointer !important ;"></i>
 				</span>
 			{/if}
 		</div>
