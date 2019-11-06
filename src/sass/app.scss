@@ -1,7 +1,9 @@
 @charset "utf-8";
+$box-background-color: #f14668;
+$box-color: white;
+
 //bulma vars and utils
 @import "../../node_modules/bulma/bulma.sass";
 
 // can be import customs here
-
 @import "_icons.scss";
