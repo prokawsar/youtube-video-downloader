@@ -25,11 +25,12 @@
     "svelte": "^3.6.7"
   },
   "scripts": {
-    "build": "rollup -c && cp public/* build/",
+    "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
     "start": "sirv public",
     "start:dev": "sirv public --dev",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "license": "",
