@@ -35,4 +35,13 @@ let video_id = ''
 			<ResultPanel bind:video_id />
 		{/if}
 	</div>
+
+	<footer style="bottom: 10px; position: fixed; width: 100%;">
+  <div class="has-text-centered">
+    <p>
+      Created by <strong><a href="https://github.com/prokawsar" target="_blank" >Kawsar Ahmed</a></strong>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>. View source code on <a href="https://github.com/prokawsar/youtube-video-downloader" target="_blank">Github</a>
+    </p>
+  </div>
+</footer>
 </div>
