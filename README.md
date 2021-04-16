@@ -5,3 +5,4 @@ Build with Sevelte
 # Next to do
 - [x] Validate the youtube link
 - [ ] Fix clear button
+- [ ] Show video thumbnail
